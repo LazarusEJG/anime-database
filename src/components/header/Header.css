@@ -1,0 +1,13 @@
+#main-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid #1e1e35;
+    background-color: rgba(7, 7, 15, 0.92);
+    backdrop-filter: blur(8px);
+}
+
+#main-header a {
+    text-decoration: none;
+    color: white;
+}
