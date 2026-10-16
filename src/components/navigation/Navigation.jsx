@@ -14,7 +14,7 @@ const Navigation = () => {
                     <li><a href="#" className="nav-link">Light Novels</a></li>
                     <li><a href="#" className="nav-link">About Me</a></li>
                 </ul>
-                <button id="hamburger-btn" onClick={() => {
+                <button id="nav-hamburger-btn" onClick={() => {
                         document.getElementById("icon-menu").classList.toggle("hidden")
                         document.getElementById("icon-close").classList.toggle("hidden")
                         document.getElementById("mobile-menu").classList.toggle("hidden")
@@ -29,7 +29,7 @@ const Navigation = () => {
                     </svg>
                 </button>
             </nav>
-                <nav id="mobile-menu" className="hidden">
+                <nav id="nav-mobile-menu" className="hidden">
                 <ul>
                     <li><a href="#" className="mobile-nav-link active">Home</a></li>
                     <li><a href="#" className="mobile-nav-link">Anime</a></li>
