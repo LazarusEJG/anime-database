@@ -1,4 +1,6 @@
 import "./Navigation.css";
+import { NavLink } from "react-router-dom";
+import {HashLink} from "react-router-hash-link";
 
 const Navigation = () => {
     return (
@@ -21,20 +23,20 @@ const Navigation = () => {
                     </svg>
                 </button>
                 <ul className="columns" id="nav-links">
-                    <li><a href="index.html" className="nav-link active">Home</a></li>
-                    <li><a href="#" className="nav-link">Anime</a></li>
-                    <li><a href="#" className="nav-link">Manga</a></li>
-                    <li><a href="#" className="nav-link">Light Novels</a></li>
-                    <li><a href="#" className="nav-link">About Me</a></li>
+                    <li><NavLink to={'/'} className="nav-link">Home</NavLink></li>
+                    <li><NavLink to={'/anime'} className="nav-link">Anime</NavLink></li>
+                    <li><NavLink to={'/manga'} className="nav-link">Manga</NavLink></li>
+                    <li><NavLink to={'/lightnovels'} className="nav-link">Light Novels</NavLink></li>
+                    <li><NavLink to={'/aboutme'} className="nav-link">About Me</NavLink></li>
                 </ul>
             </nav>
                 <nav id="nav-mobile-menu" className="hidden">
                 <ul>
-                    <li><a href="#" className="mobile-nav-link active">Home</a></li>
-                    <li><a href="#" className="mobile-nav-link">Anime</a></li>
-                    <li><a href="#" className="mobile-nav-link">Manga</a></li>
-                    <li><a href="#" className="mobile-nav-link">Light Novels</a></li>
-                    <li><a href="#" className="mobile-nav-link">About Me</a></li>
+                    <li><NavLink to={'/'} className="mobile-nav-link">Home</NavLink></li>
+                    <li><NavLink to={'/anime'} className="mobile-nav-link">Anime</NavLink></li>
+                    <li><NavLink to={'/manga'} className="mobile-nav-link">Manga</NavLink></li>
+                    <li><NavLink to={'/lightnovels'} className="mobile-nav-link">Light Novels</NavLink></li>
+                    <li><NavLink to={'/aboutme'} className="mobile-nav-link">About Me</NavLink></li>
                 </ul>
                 </nav>
         </div>

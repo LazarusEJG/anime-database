@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {HashRouter, Routes, Route} from "react-router-dom";
 import './index.css';
-import Header from "./components/header/Header";
-import Footer from './components/footer/Footer';
+import Layout from './layout';
+import Home from "./pages/home/Home"
+import Anime from "./pages/anime/Anime"
+import Manga from './pages/manga/Manga';
+import Lightnovels from './pages/lightnovels/lightnovels';
+import Aboutme from './pages/aboutme/aboutme';
+
+const App = () => {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path='anime' element={<Anime/>}/>
+          <Route path='manga' element={<Manga/>}/>
+          <Route path='aboutme' element={<Aboutme/>}/>
+          <Route path='lightnovels' element={<Lightnovels/>}/>
+        </Route>
+      </Routes>
+    </HashRouter>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header/>
-    <Footer/>
+    <App/>
   </React.StrictMode>
 );

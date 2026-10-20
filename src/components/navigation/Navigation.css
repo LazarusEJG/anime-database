@@ -116,6 +116,8 @@
     color: #e2e0f0;
 }
 
+/* responsive */
+
 @media (min-width:1100px) {
 
     #nav-links {

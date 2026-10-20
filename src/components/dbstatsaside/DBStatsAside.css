@@ -1,0 +1,87 @@
+#db-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.stat-card {
+    background-color: #0f0f1c;
+    border: 1px solid #1e1e35;
+    border-radius: 2px;
+    padding: 16px;
+}
+
+.violet-card { border-color: rgba(124, 58, 237, 0.2); }
+.sky-card    { border-color: rgba(14, 165, 233, 0.2); }
+.emerald-card{ border-color: rgba(16, 185, 129, 0.2); }
+
+.stat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.stat-card-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.bar-wrap {
+    flex: 1;
+    height: 2px;
+    background-color: #1e1e35;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.violet-bar  { background-color: #7c3aed; }
+.sky-bar     { background-color: #0ea5e9; }
+.emerald-bar { background-color: #10b981; }
+
+
+
+/* db stats aside text */
+
+.stat-card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    color: #6e6b8f;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.stat-card-total {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.stat-card-row > span:first-child {
+    font-size: 0.75rem;
+    color: #6e6b8f;
+    flex-shrink: 0;
+}
+
+.stat-card-row > span:last-child {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6875rem;
+    color: #e2e0f0;
+    width: 20px;
+    text-align: right;
+    flex-shrink: 0;
+}

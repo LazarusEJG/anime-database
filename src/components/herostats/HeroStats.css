@@ -1,0 +1,69 @@
+#stats-bar {
+    align-items: center;
+    gap: 24px;
+    border-top: 1px solid #1e1e35;
+    border-bottom: 1px solid #1e1e35;
+    background-color: #0f0f1c;
+    padding: 10px 20px;
+    overflow-x: auto;
+}
+
+#stats-counts {
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 14px;
+    background-color: #1e1e35;
+    flex-shrink: 0;
+}
+
+#ani-value, #manga-value, #ln-value {
+    margin-left: 3px;
+}
+
+#ani-value {
+    font-weight: bold;
+    color: #7c3aed;
+}
+#manga-value {
+    font-weight: bold;
+    color: #10b981; 
+}
+#ln-value {
+    font-weight: bold;
+    color: #0ea5e9;
+}
+
+#stats-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    color: #6e6b8f;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    flex-shrink: 0;
+}
+
+#stats-total {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    color: #6e6b8f;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.6875rem;
+    color: #6e6b8f;
+}
+
+.stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
