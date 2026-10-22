@@ -5,7 +5,7 @@ const DBStatsBoxA = () => {
         <div className="stat-card violet-card">
                     <div className="stat-card-header">
                         <span className="stat-card-label">Anime</span>
-                        <span className="stat-card-total violet" id="anime-stat"></span>
+                        <span className="stat-card-total violet" id="anime-stat">7</span>
                     </div>
                     <div className="stat-card-rows">
                         <div className="stat-card-row">

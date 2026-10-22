@@ -1,0 +1,11 @@
+.library-header {
+    margin-bottom: 24px;
+}
+
+.library-title {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin: 5px 0 0 5px;
+}
