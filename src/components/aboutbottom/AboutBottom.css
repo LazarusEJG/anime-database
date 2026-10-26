@@ -1,0 +1,27 @@
+#about-button {
+    display: block;
+    padding: 6px 12px;
+    margin-left: 5px;
+    font-size: 0.75rem;
+    background-color: #07070F;
+    color: #6e6b8f;
+    border: none;
+    transition: color 0.2s;
+}
+
+#about-button:hover {
+    background-color: rgba(124, 58, 237, 0.15);
+    color: #a78bfa;
+}
+
+.about-text-area {
+    background-color: #07070F;
+    color: #6e6b8f;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+}
+
+#about-bottom-box {
+    min-height: 220px;
+}

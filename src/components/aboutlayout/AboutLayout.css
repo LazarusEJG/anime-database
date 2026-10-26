@@ -1,0 +1,13 @@
+#about-layout {
+    display: grid;
+    gap: 16px;
+}
+
+.about-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 25px;
+    color: #6e6b8f;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 5px 20px 15px 5px;
+}

@@ -1,3 +1,4 @@
+import AboutLayout from "../../components/aboutlayout/AboutLayout";
 import LirbaryHeader from "../../components/libraryheader/LibraryHeader";
 
 const Aboutme = () => {
@@ -6,6 +7,7 @@ const Aboutme = () => {
             <LirbaryHeader
             label="Profile"
             title="About Me"/>
+            <AboutLayout/>
         </div>
     );
 };
