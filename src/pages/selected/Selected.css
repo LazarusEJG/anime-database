@@ -1,0 +1,22 @@
+#back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #6e6b8f;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 24px;
+    transition: color 0.15s;
+}
+
+#back-btn:hover {
+    color: #a78bfa;
+}
+
+#back-btn::before {
+    content: "<";
+}

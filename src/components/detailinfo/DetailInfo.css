@@ -1,0 +1,54 @@
+#detail-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#detail-title-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #1e1e35;
+}
+
+#detail-data .data-extra {
+    width: 1px;
+    height: 12px;
+    background-color: #1e1e35;
+    flex-shrink: 0;
+}
+
+#detail-description-wrap {
+    padding: 20px 24px;
+    flex: 1;
+}
+
+#detail-description {
+    font-size: 0.875rem;
+    color: #a9a6c8;
+    line-height: 1.7;
+    margin: 0;
+}
+
+#detail-title {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+}
+
+#detail-data {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #6e6b8f;
+    padding: 12px 24px;
+    border-bottom: 1px solid #1e1e35;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin: 0;
+}

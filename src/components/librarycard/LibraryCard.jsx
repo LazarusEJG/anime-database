@@ -9,7 +9,7 @@ const LibraryCard = (props) => {
                 <div className="card-score-overlay">
                     <span className="violet">{props.rating}</span>
                 </div>
-            <span className="card-status-tag">{props.status}</span>
+            <span className={`card-status-tag ${props.status === "Reading" || props.status === "Watching" ? "in-progress" : null}`}>{props.status}</span>
             </div>
             <div className="card-info">
                 <p>{props.name}</p>

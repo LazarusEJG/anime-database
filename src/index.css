@@ -20,6 +20,37 @@ body {
     text-decoration: none;
 }
 
+.col-status.in-progress {
+    color: #f59e0b;
+}
+
+.tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    padding: 3px 6px;
+    border-radius: 2px;
+    border: 1px solid;
+    display: inline-block;
+}
+
+.tag-anime {
+    color: #a78bfa;
+    background-color: rgba(167, 139, 250, 0.1);
+    border-color: rgba(167, 139, 250, 0.2);
+}
+
+.tag-manga {
+    color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.tag-ln {
+    color: #34d399;
+    background-color: rgba(52, 211, 153, 0.1);
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
 /* hidden */
 
 .hidden {

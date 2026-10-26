@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../toppicks/TopPicks.css"
-import { type } from "@testing-library/user-event/dist/type";
+import { isMobile } from "react-device-detect";
 
 const TopPicksCard = (props) => {
   const tagClass = {
@@ -16,14 +16,14 @@ const TopPicksCard = (props) => {
                 <img src={props.cover} alt={props.name} cover></img>
             </span>
             <span className="col-title">
-                <small>{props.count} | {props.year}</small>
                 <p>{props.name}</p>
+                <small>{props.count} | {props.year}</small>
             </span>
             <span className="col-type desktop-only">
                 <span className={`tag ${tagClass}`}>{props.type}</span>
             </span>
-            <span className="col-score">{props.rating}</span>
-            <span className="col-status desktop-only">{props.status}</span>
+            <span className={`${isMobile ? "col-score-mobile" : "col-score"}`}>{props.rating}</span>
+            <span className={`col-status desktop-only ${props.status === "Reading" || props.status === "Watching" ? "in-progress" : null}`}>{props.status}</span>
         </NavLink>
     );
 }

@@ -1,0 +1,9 @@
+#detail-card {
+    border: 1px solid #1e1e35;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: #0f0f1c;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}

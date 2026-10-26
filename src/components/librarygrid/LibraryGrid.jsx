@@ -9,7 +9,7 @@ const LibraryGrid = () => {
         <section className="library-grid">
             <LibraryCard
                 name="Vivy -Flourite Eye's Song"
-                status="completed"
+                status="Completed"
                 rating="10.0"
                 cover={vivyThumb}
                 year="2021"
@@ -17,7 +17,7 @@ const LibraryGrid = () => {
             />
             <LibraryCard
                 name="Bleach: Thousand Year Blood War"
-                status="completed"
+                status="Completed"
                 rating="10.0"
                 cover={tybw}
                 year="2022"
@@ -25,7 +25,7 @@ const LibraryGrid = () => {
             />
             <LibraryCard
                 name="Fullmetal Alchemist: Brotherhood"
-                status="completed"
+                status="Completed"
                 rating="9.5"
                 cover={fmaB}
                 year="2009"

@@ -18,7 +18,7 @@ const TopPicks = () => {
                 <span className="col-status desktop-only">Status</span>
               </div>
                 <TopPicksCard
-                rank="1"
+                rank="01"
                 name="Vivy -Flourite Eye's Song"
                 status="Completed"
                 rating="10.0"
@@ -28,7 +28,7 @@ const TopPicks = () => {
                 type="Anime"
                 />
                 <TopPicksCard
-                rank="2"
+                rank="02"
                 name="Bleach: Thousand Year Blood War"
                 status="Completed"
                 rating="10.0"
@@ -38,7 +38,7 @@ const TopPicks = () => {
                 type="Anime"
                 />
                 <TopPicksCard
-                rank="3"
+                rank="03"
                 name="Fullmetal Alchemist: Brotherhood"
                 status="Completed"
                 rating="9.5"

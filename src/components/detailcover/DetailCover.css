@@ -1,0 +1,36 @@
+#detail-cover-wrap {
+    position: relative;
+    background-color: #0a0a16;
+}
+
+#detail-cover {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+#detail-score-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(7, 7, 15, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid #1e1e35;
+    border-radius: 2px;
+    padding: 6px 8px;
+}
+
+#detail-score-tag span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #6e6b8f;
+    display: block;
+}
+
+#detail-score-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #a78bfa;
+    margin: 2px 0 0 0;
+}
