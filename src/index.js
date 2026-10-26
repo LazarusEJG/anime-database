@@ -8,6 +8,7 @@ import Anime from "./pages/anime/Anime"
 import Manga from './pages/manga/Manga';
 import Lightnovels from './pages/lightnovels/lightnovels';
 import Aboutme from './pages/aboutme/aboutme';
+import Selected from './pages/selected/Selected';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='manga' element={<Manga/>}/>
           <Route path='aboutme' element={<Aboutme/>}/>
           <Route path='lightnovels' element={<Lightnovels/>}/>
+          <Route path='selected' element={<Selected/>}/>
         </Route>
       </Routes>
     </HashRouter>

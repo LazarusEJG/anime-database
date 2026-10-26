@@ -16,6 +16,10 @@ body {
     margin: 5px 5px 15px 5px;
 }
 
+.nav-link {
+    text-decoration: none;
+}
+
 /* hidden */
 
 .hidden {
@@ -60,5 +64,13 @@ body {
 
     .six {
         flex: 6;
+    }
+
+    .desktop-only { 
+        display: block; 
+    }
+    
+    .mobile-only  { 
+        display: none; 
     }
 }

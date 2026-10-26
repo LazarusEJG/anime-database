@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 import "./LibraryCard.css"
 
 const LibraryCard = (props) => {
     return (
-        <a className="library-card">
+        <NavLink to={'/selected'} className="library-card nav-link">
             <div className="card-cover-wrap">
                 <img src={props.cover} alt={props.name} cover></img>
                 <div className="card-score-overlay">
@@ -14,7 +15,7 @@ const LibraryCard = (props) => {
                 <p>{props.name}</p>
                 <small>{props.year} | {props.count}</small>
             </div>
-        </a>
+        </NavLink>
     )
 }
 
