@@ -72,14 +72,14 @@ const DBStatsAside = () => {
         setLValueD(lightNovelTitlesD.length)
     };
 
-    function valueUpdate(){
-        useEffect = () => {
+    function ValueUpdate(){
+        useEffect(() => {
         UpdateAnimeValue();
         UpdateMangaValue();
         UpdateLightNovelValue();
-    }}
+    })}
 
-    valueUpdate();
+    ValueUpdate();
 
     
 

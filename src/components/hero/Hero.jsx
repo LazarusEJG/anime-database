@@ -34,14 +34,14 @@ const Hero = () => {
         setLValue(lightNovelTitles.length)
     };
 
-    function valueUpdate(){
-        useEffect = () => {
+    function ValueUpdate(){
+        useEffect(() => {
         UpdateAnimeValue();
         UpdateMangaValue();
         UpdateLightNovelValue();
-    }}
+    })}
 
-    valueUpdate();
+    ValueUpdate();
 
     return (
         <section>
