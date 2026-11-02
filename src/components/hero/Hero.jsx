@@ -1,3 +1,4 @@
+import { animate, stagger } from "motion";
 import HeroStats from "../herostats/HeroStats";
 import "./Hero.css";
 import { useState, useEffect } from "react";
@@ -42,6 +43,10 @@ const Hero = () => {
     })}
 
     ValueUpdate();
+
+    animate (
+        "#hero-label,#hero-title,#hero-sub",{opacity: 1},{delay:stagger(0.5)}
+    )
 
     return (
         <section>
