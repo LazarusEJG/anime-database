@@ -1,10 +1,39 @@
 import TopPicksCard from "../toppickscard/TopPicksCard"
 import "./TopPicks.css"
-import vivyThumb from "../../images/vivy-thumb.png"
-import tybw from "../../images/bleachtybw-thumb.png";
-import fmaB from "../../images/fmabrotherhood-thumb.png";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const TopPicks = () => {
+
+    const [titles, setTitles] = useState([]);
+    const topPickIds = [
+      "vivy-flourite-eyes-song",
+      "so-im-a-spider-so-what",
+      "bleach-tybw",
+      "tensura",
+      "bleach",
+      "berserk",
+      "fullmetal-alchemist-brotherhood",
+      "attack-on-titian",
+      "steins-gate",
+      "vinland-saga",
+  ];
+    
+    useEffect(()=>{
+        const loadTitles = async () => {
+            let response = await axios.get("https://ejanidb-backend-1.onrender.com/api/titles");
+            let results = []
+            topPickIds.forEach((_id,index) => {
+              const match = response.data.find(title => title._id === _id)
+              match.rank = index + 1
+              results.push(match)
+            })  
+            setTitles(results)
+        };
+
+        loadTitles();
+    },[])
+  
     return (
           <section id="top-picks" className="three">
             <p className="section-label">EJ's Top Picks</p>
@@ -17,36 +46,18 @@ const TopPicks = () => {
                 <span className="col-score desktop-only">Score</span>
                 <span className="col-status desktop-only">Status</span>
               </div>
-                <TopPicksCard
-                rank="01"
-                name="Vivy -Flourite Eye's Song"
-                status="Completed"
-                rating="10.0"
-                cover={vivyThumb}
-                year="2021"
-                count="13 ep"
-                type="Anime"
-                />
-                <TopPicksCard
-                rank="02"
-                name="Bleach: Thousand Year Blood War"
-                status="Completed"
-                rating="10.0"
-                cover={tybw}
-                year="2022"
-                count="50 ep"
-                type="Anime"
-                />
-                <TopPicksCard
-                rank="03"
-                name="Fullmetal Alchemist: Brotherhood"
-                status="Completed"
-                rating="9.5"
-                cover={fmaB}
-                year="2009"
-                count="64 ep"
-                type="Anime"
-                />
+              {titles.map((title)=>(
+              <TopPicksCard
+              rank={title.rank}
+              name={title.name}
+              cover={title.cover}
+              count={title.count}
+              year={title.year}
+              id={title._id}
+              type={title.type}
+              status={title.status}
+              />
+              ))}
             </div>
           </section>
     )
