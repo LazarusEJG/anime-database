@@ -5,7 +5,7 @@ const LibraryCard = (props) => {
     return (
         <NavLink to={'/selected'} className="library-card nav-link">
             <div className="card-cover-wrap">
-                <img src={props.cover} alt={props.name} cover></img>
+                <img src={`https://ejanidb-backend-1.onrender.com/${props.cover}`} alt={props.name} cover></img>
                 <div className="card-score-overlay">
                     <span className="violet">{props.rating}</span>
                 </div>

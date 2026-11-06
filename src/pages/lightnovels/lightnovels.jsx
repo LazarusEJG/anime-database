@@ -9,7 +9,9 @@ const Lightnovels = () => {
             label="Library"
             title="Light Novels"/>
             <Filterbar/>
-            <LibraryGrid/>
+            <LibraryGrid
+            page="Light Novel"
+            />
         </div>
     );
 };

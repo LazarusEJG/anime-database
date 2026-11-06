@@ -1,36 +1,38 @@
 import LibraryCard from "../librarycard/LibraryCard";
-import vivyThumb from "../../images/vivy-thumb.png"
-import tybw from "../../images/bleachtybw-thumb.png";
-import fmaB from "../../images/fmabrotherhood-thumb.png";
 import "./LibraryGrid.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const LibraryGrid = () => {
+const LibraryGrid = (props) => {
+    const [titles, setTitles] = useState([]);
+
+    useEffect(()=>{
+        const loadTitles = async () => {
+            const response = await axios.get("https://ejanidb-backend-1.onrender.com/api/titles");
+
+            const UpdateResponse = async () => {
+                const Titles = response.data.filter(title => title.type === `${props.page}`);
+                setTitles(Titles);
+            }
+
+            UpdateResponse();
+        };
+
+        loadTitles();
+    },[]);
+
     return (
         <section className="library-grid">
+            {titles.map((title)=>(
             <LibraryCard
-                name="Vivy -Flourite Eye's Song"
-                status="Completed"
-                rating="10.0"
-                cover={vivyThumb}
-                year="2021"
-                count="13 ep"
+                name={title.name}
+                status={title.status}
+                rating={title.rating}
+                cover={title.cover}
+                year={title.year}
+                count={title.count}
             />
-            <LibraryCard
-                name="Bleach: Thousand Year Blood War"
-                status="Completed"
-                rating="10.0"
-                cover={tybw}
-                year="2022"
-                count="50 ep"
-            />
-            <LibraryCard
-                name="Fullmetal Alchemist: Brotherhood"
-                status="Completed"
-                rating="9.5"
-                cover={fmaB}
-                year="2009"
-                count="64 ep"
-            />
+            ))}
         </section>
     );
 };

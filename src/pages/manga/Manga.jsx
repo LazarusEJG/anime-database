@@ -9,7 +9,9 @@ const Manga = () => {
             label="Library"
             title="Manga"/>
             <Filterbar/>
-            <LibraryGrid/>
+            <LibraryGrid
+            page="Manga"
+            />
         </div>
     );
 };

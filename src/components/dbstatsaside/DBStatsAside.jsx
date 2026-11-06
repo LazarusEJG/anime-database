@@ -3,13 +3,14 @@ import DBStatsBoxL from "../dbstatsboxl/DBStatsBoxL";
 import DBStatsBoxM from "../dbstatsboxm/DBStatsBoxM";
 import "./DBStatsAside.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const DBStatsAside = () => {
-    const base_url = "https://lazarusejg.github.io/csce242/projects/07parsing-and-contact/json/titles.json";
+    const [titles, setTitles] = useState([]);
 
-    const GetTitles = async () => {
-        const response = await fetch(base_url);
-        return response.json();
+    const loadTitles = async () => {
+        let response = await axios.get("https://ejanidb-backend-1.onrender.com/api/titles");
+        setTitles(response.data)
     };
 
     const [aValue, setAValue] = useState(0)
@@ -19,7 +20,6 @@ const DBStatsAside = () => {
     const [aValueD, setAValueD] = useState(0)
 
     const UpdateAnimeValue = async () => {
-        const titles = await GetTitles();
         const animeTitles = titles.filter(title => title.type === "Anime");
         const animeTitlesC = titles.filter(title => title.type === "Anime" && title.status === "Completed");
         const animeTitlesW = titles.filter(title => title.type === "Anime" && title.status === "Watching");
@@ -39,7 +39,6 @@ const DBStatsAside = () => {
     const [mValueD, setMValueD] = useState(0)
 
     const UpdateMangaValue = async () => {
-        const titles = await GetTitles();
         const mangaTitles = titles.filter(title => title.type === "Manga");
         const mangaTitlesC = titles.filter(title => title.type === "Manga" && title.status === "Completed");
         const mangaTitlesR = titles.filter(title => title.type === "Manga" && title.status === "Reading");
@@ -59,7 +58,6 @@ const DBStatsAside = () => {
     const [lValueD, setLValueD] = useState(0)
 
     const UpdateLightNovelValue = async () => {
-        const titles = await GetTitles();
         const lightNovelTitles = titles.filter(title => title.type === "Light Novel");
         const lightNovelTitlesC = titles.filter(title => title.type === "Light Novel" && title.status === "Completed");
         const lightNovelTitlesR = titles.filter(title => title.type === "Light Novel" && title.status === "Reading");
@@ -74,6 +72,7 @@ const DBStatsAside = () => {
 
     function ValueUpdate(){
         useEffect(() => {
+        loadTitles();
         UpdateAnimeValue();
         UpdateMangaValue();
         UpdateLightNovelValue();
