@@ -19,7 +19,7 @@
     flex-shrink: 0;
 }
 
-#detail-description-wrap {
+.detail-description-wrap {
     padding: 20px 24px;
     flex: 1;
 }

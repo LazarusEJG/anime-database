@@ -1,8 +1,9 @@
-import {motion} from "motion/react"
+import {motion, stagger} from "motion/react"
 import HeroStats from "../herostats/HeroStats";
 import "./Hero.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { delay } from "motion";
 
 const Hero = () => {
 
@@ -49,7 +50,7 @@ const Hero = () => {
                 <img src="https://images.unsplash.com/photo-1617293134227-0ec282f3ed89?w=1400&h=600&fit=crop&auto=format"
                     alt="Night cityscape" />
                 <div id="hero-overlay"></div>
-                <motion.div className="columns" id="hero-content" initial={false} animate={{opacity:1}}>
+                <motion.div className="columns" id="hero-content" initial={{opacity:0}} animate={{opacity:1}}>
                     <p id="hero-label">Personal Collection</p>
                     <h1 id="hero-title">EJ's Anime<br/>Database</h1>
                     <p id="hero-sub">A curated personal log of anime, manga, and light novels — rated and ranked.</p>

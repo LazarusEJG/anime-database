@@ -18,6 +18,8 @@ const DetailCard = (props) => {
                 genre={props.genre}
                 description={props.description}
                 trailer={props.trailer}
+                tag={props.type === "Anime" ? "tag-anime" : props.type === "Manga" ? "tag-manga" : "tag-ln"}
+                hidden={props.trailer ? "" : "hidden"}
             />
         </article>
     )
