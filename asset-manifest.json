@@ -1,17 +1,14 @@
 {
   "files": {
     "main.css": "/anime-database/static/css/main.fe4de880.css",
-    "main.js": "/anime-database/static/js/main.e5bafb1c.js",
-    "static/media/vivy-thumb.png": "/anime-database/static/media/vivy-thumb.7dc72b409ea81c224b12.png",
+    "main.js": "/anime-database/static/js/main.e09cedf1.js",
     "static/media/profile-image-600x400.jpg": "/anime-database/static/media/profile-image-600x400.cfe0632e83f3b642d827.jpg",
-    "static/media/bleachtybw-thumb.png": "/anime-database/static/media/bleachtybw-thumb.eb2d84beade6f5360f3a.png",
-    "static/media/fmabrotherhood-thumb.png": "/anime-database/static/media/fmabrotherhood-thumb.67b8a28bb7417db199ea.png",
     "index.html": "/anime-database/index.html",
     "main.fe4de880.css.map": "/anime-database/static/css/main.fe4de880.css.map",
-    "main.e5bafb1c.js.map": "/anime-database/static/js/main.e5bafb1c.js.map"
+    "main.e09cedf1.js.map": "/anime-database/static/js/main.e09cedf1.js.map"
   },
   "entrypoints": [
     "static/css/main.fe4de880.css",
-    "static/js/main.e5bafb1c.js"
+    "static/js/main.e09cedf1.js"
   ]
 }
