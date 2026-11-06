@@ -10,7 +10,7 @@ const TopPicksCard = (props) => {
   }[props.type];
 
     return (
-        <NavLink to={`/selected?=${props.id}`} className={`picks-row entry-row nav-link ${props.rank % 2 === 0 ? "odd" : "even"}`}>
+        <NavLink to={`/selected?id=${props.id}`} className={`picks-row entry-row nav-link ${props.rank % 2 === 0 ? "odd" : "even"}`}>
             <span className="col-rank">{props.rank}</span>
             <span className="col-thumb">
                 <img src={`https://ejanidb-backend-1.onrender.com/${props.cover}`} alt={props.name} cover></img>

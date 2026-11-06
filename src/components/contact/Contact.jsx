@@ -47,15 +47,15 @@ const Contact = () => {
             />
             <form id="contact-form" onSubmit={onSubmit}>
                 <p>
-                    <label className="section-label" for="name">Name:</label>
+                    <label className="section-label" htmlFor="name">Name:</label>
                     <input className="about-text-area" type="text" name="name" required />
                 </p>
                 <p>
-                    <label className="section-label" for="email">Email:</label>
+                    <label className="section-label" htmlFor="email">Email:</label>
                     <input className="about-text-area" type="email" name="email" required />
                 </p>
                 <p>
-                    <label className="section-label" for="message">Message:</label>
+                    <label className="section-label" htmlFor="message">Message:</label>
                     <textarea className="about-text-area" name="message" required></textarea>
                 </p>
                 <p><button id="about-button" type="submit">Submit</button></p>

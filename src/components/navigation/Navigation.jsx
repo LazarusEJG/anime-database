@@ -14,12 +14,12 @@ const Navigation = () => {
                         document.getElementById("icon-close").classList.toggle("hidden")
                         document.getElementById("nav-mobile-menu").classList.toggle("hidden")}}>
                     <svg id="icon-menu" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" />
+                        <path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" strokeWidth="1.5"
+                            strokeLinecap="round" />
                     </svg>
                     <svg id="icon-close" width="18" height="18" viewBox="0 0 18 18" fill="none" className="hidden">
-                        <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" />
+                        <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" strokeWidth="1.5"
+                            strokeLinecap="round" />
                     </svg>
                 </button>
                 <ul className="columns" id="nav-links">

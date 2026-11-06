@@ -11,7 +11,9 @@ const Selected = () => {
     useEffect(()=>{
         const loadTitles = async () => {
             let response = await axios.get("https://ejanidb-backend-1.onrender.com/api/titles");
-            const pageid = SearchParams.get("id");
+            console.log(response)
+            const pageid = (SearchParams.get("id"))
+            console.log(pageid)
             let match = response.data.find(title => title._id === pageid)
             setTitles(match)
             console.log(match)   
