@@ -3,7 +3,7 @@ import "./LibraryCard.css"
 
 const LibraryCard = (props) => {
     return (
-        <NavLink to={'/selected'} className="library-card nav-link">
+        <NavLink to={`/selected?id=${props.id}`} className="library-card nav-link">
             <div className="card-cover-wrap">
                 <img src={`https://ejanidb-backend-1.onrender.com/${props.cover}`} alt={props.name} cover></img>
                 <div className="card-score-overlay">

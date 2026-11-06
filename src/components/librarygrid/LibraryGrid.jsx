@@ -31,6 +31,7 @@ const LibraryGrid = (props) => {
                 cover={title.cover}
                 year={title.year}
                 count={title.count}
+                id={title._id}
             />
             ))}
         </section>

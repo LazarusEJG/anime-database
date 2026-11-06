@@ -5,9 +5,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Hero = () => {
-    animate (
-        "#hero-label,#hero-title,#hero-sub",{opacity: 1},{delay:stagger(0.5)}
-    )
 
     const [titles, setTitles] = useState([]);
 

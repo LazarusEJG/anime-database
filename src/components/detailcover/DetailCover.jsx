@@ -3,7 +3,7 @@ import "./DetailCover.css"
 const DetailCover = (props) => {
     return(
     <div id="detail-cover-wrap">
-        <img src={props.coverfull} id="detail-cover"></img>
+        <img src={`https://ejanidb-backend-1.onrender.com/${props.coverfull}`} id="detail-cover"></img>
             <div id="detail-score-tag"><span>EJ score</span>
                 <p id="detail-score-value">{props.rating}</p>
             </div>
