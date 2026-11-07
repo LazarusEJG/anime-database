@@ -42,7 +42,21 @@ const Hero = () => {
         UpdateLightNovelValue();
     })
 
+    const containerVariants = {
+        hidden: {opacity: 0},
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren:0.15,
+                delayChildren: 0.2,
+            },
+        },
+    };
 
+    const itemVariants = {
+        hidden: {opacity: 0},
+        visible: {opacity: 1, transition: {duration: 0.5}}
+    }
 
     return (
         <section>
@@ -50,10 +64,10 @@ const Hero = () => {
                 <img src="https://images.unsplash.com/photo-1617293134227-0ec282f3ed89?w=1400&h=600&fit=crop&auto=format"
                     alt="Night cityscape" />
                 <div id="hero-overlay"></div>
-                <motion.div className="columns" id="hero-content" initial={{opacity:0}} animate={{opacity:1}}>
-                    <p id="hero-label">Personal Collection</p>
-                    <h1 id="hero-title">EJ's Anime<br/>Database</h1>
-                    <p id="hero-sub">A curated personal log of anime, manga, and light novels — rated and ranked.</p>
+                <motion.div className="columns" id="hero-content" variants={containerVariants} initial="hidden" animate="visible">
+                    <motion.p id="hero-label" variants={itemVariants}>Personal Collection</motion.p>
+                    <motion.h1 id="hero-title" variants={itemVariants}>EJ's Anime<br/>Database</motion.h1>
+                    <motion.p id="hero-sub" variants={itemVariants}>A curated personal log of anime, manga, and light novels — rated and ranked.</motion.p>
                 </motion.div>
             </section>
             <HeroStats
