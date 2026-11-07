@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const LibraryGrid = (props) => {
+
     const [titles, setTitles] = useState([]);
 
     useEffect(()=>{
@@ -12,7 +13,7 @@ const LibraryGrid = (props) => {
 
             const UpdateResponse = async () => {
                 const Titles = response.data.filter(title => title.type === `${props.page}`);
-                setTitles(Titles);
+                setTitles(Titles)
             }
 
             UpdateResponse();
@@ -23,7 +24,8 @@ const LibraryGrid = (props) => {
 
     return (
         <section className="library-grid">
-            {titles.map((title)=>(
+            {titles.filter(title => props.filter === "All" ? title.status : props.filter === "Completed" ? title.status === "Completed" : props.filter === "Watching" || props.filter === "Reading" ? title.status === "Watching" || title.status === "Reading" : props.filter === "Plan to Watch" || props.filter === "Plan to Read" ? title.status === "Plan to Watch" || title.status === "Plan to Read" : title.status === "Dropped" )
+                .map((title)=>(
             <LibraryCard
                 name={title.name}
                 status={title.status}
