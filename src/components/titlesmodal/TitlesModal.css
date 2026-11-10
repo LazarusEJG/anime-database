@@ -2,8 +2,52 @@
 
 #title-dialog {
     display: block;
-    background-color: rgba(167, 139, 250, 0.1);
-    color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+
+#title-add-container {
+    background-color: #0a0a16;
     border: 2px solid #969696;
     border-radius: 10px;
+}
+
+.title-text-area {
+    background-color: #07070F;
+    color: #6e6b8f;
+    border: none;
+}
+
+.title-text-area-full {
+    background-color: #07070F;
+    color: #6e6b8f;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title-button {
+    display: block;
+    padding: 6px 12px;
+    margin-left: 5px;
+    font-size: 0.75rem;
+    background-color: #07070F;
+    color: #6e6b8f;
+    border: none;
+    transition: color 0.2s;
+}
+
+.type-field {
+    padding: 6px 12px;
+    margin-left: 5px;
+    font-size: 0.75rem;
+    background-color: #07070F;
+    color: #6e6b8f;
+    border: none;
+    transition: color 0.2s;
+}
+
+#title-button:hover {
+    background-color: rgba(124, 58, 237, 0.15);
+    color: #a78bfa;
 }
