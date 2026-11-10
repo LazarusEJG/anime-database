@@ -56,6 +56,7 @@ const TopPicks = () => {
               id={title._id}
               type={title.type}
               status={title.status}
+              rating={title.rating}
               />
               ))}
             </div>
