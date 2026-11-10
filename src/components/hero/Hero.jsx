@@ -4,13 +4,14 @@ import "./Hero.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { delay } from "motion";
+import { API_BASE_URL } from "../../config";
 
 const Hero = () => {
 
     const [titles, setTitles] = useState([]);
 
     const loadTitles = async () => {
-        let response = await axios.get("https://ejanidb-backend-1.onrender.com/api/titles");
+        let response = await axios.get(`${API_BASE_URL}/api/titles`);
         setTitles(response.data)
     };
 

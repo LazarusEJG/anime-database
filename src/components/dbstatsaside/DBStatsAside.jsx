@@ -4,12 +4,13 @@ import DBStatsBoxM from "../dbstatsboxm/DBStatsBoxM";
 import "./DBStatsAside.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../../config";
 
 const DBStatsAside = () => {
     const [titles, setTitles] = useState([]);
 
     const loadTitles = async () => {
-        let response = await axios.get("https://ejanidb-backend-1.onrender.com/api/titles");
+        let response = await axios.get(`${API_BASE_URL}/api/titles`);
         setTitles(response.data)
     };
 
