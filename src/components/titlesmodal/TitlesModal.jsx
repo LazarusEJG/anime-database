@@ -50,7 +50,7 @@ const TitlesModal = (props) => {
                             <label className="section-label" htmlFor="description">Description:</label>
                             <textarea className="title-text-area-full" name="description" required></textarea>
                         </p>
-                        <p><button className="title-button" type="submit">Submit</button></p>
+                        <p><button className="title-button" type="submit">Add</button></p>
                     </form>
                 </div>
             </div>

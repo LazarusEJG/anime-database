@@ -16,6 +16,16 @@ body {
     margin: 5px 5px 15px 5px;
 }
 
+.section-label-center {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    color: #6e6b8f;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin: 5px 5px 15px 5px;
+}
+
 .nav-link {
     text-decoration: none;
 }

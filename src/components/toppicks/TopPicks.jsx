@@ -5,6 +5,7 @@ import axios from "axios";
 
 const TopPicks = () => {
 
+    const [pending, setPending] = useState(true);
     const [titles, setTitles] = useState([]);
     const topPickIds = [
       "vivy-flourite-eyes-song",
@@ -27,8 +28,9 @@ const TopPicks = () => {
               const match = response.data.find(title => title._id === _id)
               match.rank = index + 1
               results.push(match)
-            })  
+            })
             setTitles(results)
+            setPending(false)
         };
 
         loadTitles();
@@ -46,6 +48,7 @@ const TopPicks = () => {
                 <span className="col-score desktop-only">Score</span>
                 <span className="col-status desktop-only">Status</span>
               </div>
+              {pending && <p  className="section-label-center">Loading titles....</p>}
               {titles.map((title)=>(
               <TopPicksCard
               rank={title.rank}

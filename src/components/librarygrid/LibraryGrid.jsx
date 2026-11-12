@@ -28,7 +28,7 @@ const LibraryGrid = (props) => {
 
     return (
         <section className="library-grid">
-            {pending && <p>Loading titles....</p>}
+            {pending && <p  className="section-label-center">Loading titles....</p>}
             {titles.filter(title => props.filter === "All" ? title.status : props.filter === "Completed" ? title.status === "Completed" : props.filter === "Watching" || props.filter === "Reading" ? title.status === "Watching" || title.status === "Reading" : props.filter === "Plan to Watch" || props.filter === "Plan to Read" ? title.status === "Plan to Watch" || title.status === "Plan to Read" : title.status === "Dropped" )
                 .map((title)=>(
             <LibraryCard
