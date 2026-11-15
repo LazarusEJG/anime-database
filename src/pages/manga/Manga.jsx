@@ -1,4 +1,3 @@
-import AddButton from "../../addbutton/AddButton";
 import Filterbar from "../../components/filterbar/Filterbar";
 import LibraryGrid from "../../components/librarygrid/LibraryGrid";
 import LirbaryHeader from "../../components/libraryheader/LibraryHeader";
@@ -9,7 +8,6 @@ const Manga = () => {
 
     return (
         <div>
-            <AddButton/>
             <LirbaryHeader
             label="Library"
             title="Manga"/>

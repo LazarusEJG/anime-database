@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import DetailCard from "../../components/detailcard/DetailCard"
 import "./Selected.css"
+import { API_BASE_URL } from "../../config"
 
 const Selected = () => {
     const [titles, setTitles] = useState([]);
@@ -10,7 +11,7 @@ const Selected = () => {
     
     useEffect(()=>{
         const loadTitles = async () => {
-            let response = await axios.get("https://ejanidb-backend-1.onrender.com/api/titles");
+            let response = await axios.get(`${API_BASE_URL}/api/titles`);
             const pageid = (SearchParams.get("id"))
             let match = response.data.find(title => title._id === pageid)
             setTitles(match)  

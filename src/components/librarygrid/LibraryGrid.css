@@ -4,3 +4,26 @@
     gap: 16px;
     margin-left: 5px;
 }
+
+.card-cover-wrap {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background-color: #0a0a16;
+}
+
+.card-info {
+    padding: 10px;
+}
+
+.library-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #0f0f1c;
+    border: 1px solid #1e1e35;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    text-align: left;
+}

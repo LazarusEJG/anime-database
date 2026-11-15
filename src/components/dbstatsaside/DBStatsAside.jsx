@@ -43,7 +43,7 @@ const DBStatsAside = () => {
         const mangaTitles = titles.filter(title => title.type === "Manga");
         const mangaTitlesC = titles.filter(title => title.type === "Manga" && title.status === "Completed");
         const mangaTitlesR = titles.filter(title => title.type === "Manga" && title.status === "Reading");
-        const mangaTitlesP = titles.filter(title => title.type === "Manga" && title.status === "Plan to Watch");
+        const mangaTitlesP = titles.filter(title => title.type === "Manga" && title.status === "Plan to Read");
         const mangaTitlesD = titles.filter(title => title.type === "Manga" && title.status === "Dropped");
         setMValue(mangaTitles.length)
         setMValueC(mangaTitlesC.length)
@@ -62,7 +62,7 @@ const DBStatsAside = () => {
         const lightNovelTitles = titles.filter(title => title.type === "Light Novel");
         const lightNovelTitlesC = titles.filter(title => title.type === "Light Novel" && title.status === "Completed");
         const lightNovelTitlesR = titles.filter(title => title.type === "Light Novel" && title.status === "Reading");
-        const lightNovelTitlesP = titles.filter(title => title.type === "Light Novel" && title.status === "Plan to Watch");
+        const lightNovelTitlesP = titles.filter(title => title.type === "Light Novel" && title.status === "Plan to Read");
         const lightNovelTitlesD = titles.filter(title => title.type === "Light Novel" && title.status === "Dropped");
         setLValue(lightNovelTitles.length)
         setLValueC(lightNovelTitlesC.length)

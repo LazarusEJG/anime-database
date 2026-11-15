@@ -28,6 +28,8 @@
     font-size: 0.875rem;
     color: #a9a6c8;
     line-height: 1.7;
+    text-wrap-mode: wrap;
+    text-wrap-style: pretty;
 }
 
 #detail-title {

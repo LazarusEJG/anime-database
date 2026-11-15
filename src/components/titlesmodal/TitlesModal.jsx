@@ -1,8 +1,34 @@
 import { useState } from "react";
 import "./TitlesModal.css";
+import { API_BASE_URL } from "../../config";
 
 const TitlesModal = (props) => {
     const [type, setType] = useState("Anime");
+    const [prevSrc, setPrevSrc] = useState("");
+    const [result, setResult] = useState()
+
+    const uploadImage = (e) => {
+        setPrevSrc(URL.createObjectURL(e.target.files[0]));
+    };
+
+    const addTitleToServer = async (e) => {
+        e.preventDefault();
+        setResult("Sending...")
+        const formData = new FormData(e.target);
+        formData.set("rating", Number(e.target.rating.value))
+        formData.set("year", Number(e.target.year.value))
+        const response = await fetch(`${API_BASE_URL}/api/titles`,{
+            "method": "POST",
+            "body": formData
+        })
+
+        if(response.status===200) {
+            setResult("Awesome")
+        } else {
+            setResult("Error")
+        }
+        
+    };
 
     return (
         <div id="title-dialog" className="w3-modal">
@@ -13,44 +39,55 @@ const TitlesModal = (props) => {
                     </span>
                 </div>
                 <div id="title-dialog-content">
-                    <form id="title-add-form">
+                    <form id="title-add-form" onSubmit={addTitleToServer}>
                         <h1 className="section-label">Add Title</h1>
                         <p>
                             <label className="section-label" htmlFor="name">Title Name:</label>
-                            <input className="title-text-area" type="text" name="name" required />
+                            <input className="title-text-area" type="text" id="name" name="name" required minLength={3}/>
+                        </p>
+                        <p>
+                            <label className="section-label" htmlFor="cover">Cover</label>
+                            <input className="section-label" name="cover" id="cover" type="file" accept="images/" onChange={uploadImage}></input>
+                            <label className="section-label" htmlFor="coverfull">Coverfull</label>
+                            <input className="section-label" name="coverfull" id="coverfull" type="file" accept="images/" onChange={uploadImage}></input>
                         </p>
                         <p>
                             <label className="section-label" htmlFor="type"></label>
-                            <select className="type-field" name="type" onChange={(e) => setType(e.target.value)} required>
+                            <select className="type-field" id="type" name="type" onChange={(e) => setType(e.target.value)} required>
                                 <option>Anime</option>
                                 <option>Manga</option>
                                 <option>Light Novel</option>
                             </select>
                             <label className="section-label" htmlFor="status"></label>
-                            <select className="type-field" name="status" required>
+                            <select className="type-field" id="status" name="status" required>
                                 <option>Completed</option>
                                 <option>{`${type === "Anime" ? "Watching" : "Reading"}`}</option>
+                                <option>{`${type === "Anime" ? "Plan to Watch" : "Plan to Read"}`}</option>
+                                <option>Dropped</option>
                             </select>
                             <label className="section-label" htmlFor="rating">Rating:</label>
-                            <input className="title-text-area" type="number" name="rating" max={10} min={0} required></input>
+                            <input className="title-text-area" type="number" id="rating" name="rating" max={10} min={0} required></input>
                             <label className="section-label" htmlFor="count">Count:</label>
-                            <input className="title-text-area" name="count" required></input>
+                            <input className="title-text-area" id="count" name="count" required></input>
                             <label className="section-label" htmlFor="year">Year:</label>
-                            <input className="title-text-area" name="year" required></input>
+                            <input className="title-text-area" id="year" name="year" type="number" required min={1900}></input>
                         </p>
                         <p>
-                            <label className="section-label" htmlFor="link">Youtube Embed Link:</label>
-                            <input className="title-text-area-full" name="link"></input>               
+                            <label className="section-label" htmlFor="trailer">Youtube Trailer Link:</label>
+                            <input className="title-text-area-full" id="trailer" name="trailer"></input>               
                         </p>
                         <p>
-                            <label className="section-label" htmlFor="genres">Genres:</label>
-                            <input className="title-text-area-full" name="genres" required />
+                            <label className="section-label" htmlFor="genre">Genres:</label>
+                            <input className="title-text-area-full" id="genre" name="genre" required minLength={5}/>
                         </p>
                         <p>
                             <label className="section-label" htmlFor="description">Description:</label>
-                            <textarea className="title-text-area-full" name="description" required></textarea>
+                            <textarea className="title-text-area-full" id="description" name="description" required minLength={100}></textarea>
                         </p>
-                        <p><button className="title-button" type="submit">Add</button></p>
+                        <p>
+                            <button className="title-button" type="submit" >Add</button>
+                            <p>{result}</p>
+                        </p>
                     </form>
                 </div>
             </div>

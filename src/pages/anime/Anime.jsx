@@ -2,7 +2,6 @@ import { useState } from "react";
 import Filterbar from "../../components/filterbar/Filterbar";
 import LibraryGrid from "../../components/librarygrid/LibraryGrid";
 import LirbaryHeader from "../../components/libraryheader/LibraryHeader";
-import AddButton from "../../addbutton/AddButton";
 
 const Anime = () => {
     const [filter, setFilter] = useState("All");
@@ -10,7 +9,6 @@ const Anime = () => {
 
     return (
         <div>
-            <AddButton/>
             <LirbaryHeader
             label="Library"
             title="Anime"/>
