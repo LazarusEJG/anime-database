@@ -85,7 +85,7 @@ const TitlesModal = (props) => {
                                 <option>Dropped</option>
                             </select>
                             <label className="section-label" htmlFor="rating">Rating:</label>
-                            <input className="title-text-area" type="number" id="rating" name="rating" max={10} min={0} required></input>
+                            <input className="title-text-area" type="number" step="0.5" id="rating" name="rating" max={10} min={0} required></input>
                             <label className="section-label" htmlFor="count">Count:</label>
                             <input className="title-text-area" id="count" name="count" required></input>
                             <label className="section-label" htmlFor="year">Year:</label>
