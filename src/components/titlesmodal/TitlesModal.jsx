@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./TitlesModal.css";
 import { API_BASE_URL } from "../../config";
+import toast, { Toaster } from "react-hot-toast";
 
 const TitlesModal = (props) => {
     const [type, setType] = useState("Anime");
     const [prevSrc, setPrevSrc] = useState("");
-    const [result, setResult] = useState()
+    const [result, setResult] = useState("")
 
     const uploadImage = (e) => {
         setPrevSrc(URL.createObjectURL(e.target.files[0]));
@@ -22,16 +23,34 @@ const TitlesModal = (props) => {
             "body": formData
         })
 
-        if(response.status===200) {
-            setResult("Awesome")
-        } else {
-            setResult("Error")
-        }
+        setResult(response.status === 200 ? toast.success("Data Sent!", {
+            style: {
+                border: '1px solid rgba(124, 58, 237, 0.4)',
+                padding: '16px',
+                color: 'rgba(124, 58, 237, 0.4)',
+                background: '#07070F'
+            }, iconTheme: {
+                primary: 'rgba(124, 58, 237, 0.4)',
+                secondary: '#FFFAEE',
+            }
+        }) : toast.error("Error"), {
+            style: {
+                border: '1px solid rgba(124, 58, 237, 0.4)',
+                padding: '16px',
+                color: 'rgba(124, 58, 237, 0.4)',
+                background: '#07070F'
+            }, iconTheme: {
+                primary: 'rgba(124, 58, 237, 0.4)',
+                secondary: '#FFFAEE',
+            }
         
-    };
+        })}
 
     return (
         <div id="title-dialog" className="w3-modal">
+            <Toaster
+                position="bottom-center"
+            />
             <div className="w3-modal-content" id="title-add-container">
                 <div className="w3-container">
                     <span id="dialog-close" className="w3-button w3-display-topright" onClick={props.close}>
@@ -86,7 +105,6 @@ const TitlesModal = (props) => {
                         </p>
                         <p>
                             <button className="title-button" type="submit" >Add</button>
-                            <p>{result}</p>
                         </p>
                     </form>
                 </div>
