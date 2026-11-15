@@ -14,21 +14,8 @@ const TitlesModal = (props) => {
 
     const addTitleToServer = async (e) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        formData.set("rating", Number(e.target.rating.value))
-        formData.set("year", Number(e.target.year.value))
-        const response = await fetch(`${API_BASE_URL}/api/titles`,{
-            "method": "POST",
-            "body": formData
-        })
-        
-        toast.promise (
-            response.status === 200, {
-                loading: 'Sending Data...',
-                success: <b>Data Received!</b>,
-                error: <b>Error</b>,
-            },
-            {
+        setResult(toast("Sending data, please wait...",
+        {
             style: {
                 border: '1px solid rgba(124, 58, 237, 0.4)',
                 padding: '16px',
@@ -39,8 +26,36 @@ const TitlesModal = (props) => {
                 secondary: '#FFFAEE',
             }
         }
-    )
-}
+        ))
+        const formData = new FormData(e.target);
+        formData.set("rating", Number(e.target.rating.value))
+        formData.set("year", Number(e.target.year.value))
+        const response = await fetch(`${API_BASE_URL}/api/titles`,{
+            "method": "POST",
+            "body": formData
+        })
+        setResult(response.status === 200 ? toast.success("Data Sent!", {
+            style: {
+                border: '1px solid rgba(124, 58, 237, 0.4)',
+                padding: '16px',
+                color: 'rgba(124, 58, 237, 0.4)',
+                background: '#07070F'
+            }, iconTheme: {
+                primary: 'rgba(124, 58, 237, 0.4)',
+                secondary: '#FFFAEE',
+            }
+        }) : toast.error("Error"), {
+            style: {
+                border: '1px solid rgba(124, 58, 237, 0.4)',
+                padding: '16px',
+                color: 'rgba(124, 58, 237, 0.4)',
+                background: '#07070F'
+            }, iconTheme: {
+                primary: 'rgba(124, 58, 237, 0.4)',
+                secondary: '#FFFAEE',
+            }
+        
+        })}
 
     return (
         <div id="title-dialog" className="w3-modal">
